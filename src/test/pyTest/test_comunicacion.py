@@ -8,8 +8,7 @@ with open("environment.json", "r") as env_file:
     environment = json.load(env_file)
 
 current_environment = configuration["environment"]
-username = environment[current_environment]["accounts"]["sharedAccount"]["username"]
-password = environment[current_environment]["accounts"]["sharedAccount"]["password"]
+user_root = environment[current_environment]["accounts"]["sharedAccount"]["userRoot"]
 
 def test_create_comunicacion():
     try:

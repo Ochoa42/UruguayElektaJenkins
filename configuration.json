@@ -1,4 +1,4 @@
 {
-    "environment" : "test",
+    "environment": "test",
     "timeout": 10000
 }
