@@ -68,3 +68,26 @@ def test_getMunicipiosExtraUruguay():
         assert datos["success"] == True, f"Error en la lista de municipios Extras: {datos.get}"
     except Exception as e:
         assert False, f"Error al obtener token: {e}"
+
+def test_getRolesUruguay():
+    try:
+        access_token = obtenerToken()
+        headers =  {"Authorization": f"Bearer {access_token}"}
+        response = requests.get(url_base+"/roles?fullType=L&perPage=-1",headers=headers)
+        response.raise_for_status()
+        datos = response.json()
+        assert datos["success"] == True, f"Error en la lista de roles: {datos.get}"
+    except Exception as e:
+        assert False, f"Error al obtener token: {e}"
+
+def test_getRolesExtraUruguay():
+    try:
+        access_token = obtenerToken()
+        headerv =  {"Authorization": f"Bearer {access_token}"}
+        response = requests.get(url_base+"/roles?fullType=EXTRA&perPage=-1", headers=headerv)
+        response.raise_for_status()
+        datos = response.json()
+        assert datos["success"] == True, f"Error en la lista de roles Extras: {datos.get}"
+    except Exception as e:
+        assert False, f"Error al obtener token: {e}"
+                                
