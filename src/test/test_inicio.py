@@ -1,5 +1,8 @@
 import json
 import requests
+from unittest.mock import Mock
+import pytest 
+import solicitudes 
 #from main.cases.redElektaCases import CREDENCIALES_VALIDAS
 
 # with open("configuration.json", "r") as config_file:
@@ -90,4 +93,7 @@ def test_getRolesExtraUruguay():
         assert datos["success"] == True, f"Error en la lista de roles Extras: {datos.get}"
     except Exception as e:
         assert False, f"Error al obtener token: {e}"
-                                
+
+@pytest.fixture
+def ssd(moker):
+    return ""
